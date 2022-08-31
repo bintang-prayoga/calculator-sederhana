@@ -4,10 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <!-- Bootstrap 5.2 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    
     <!-- Start Style -->
     <style>
         .bg-black1 {
@@ -23,35 +21,33 @@
         }
     </style>
     <!-- End Style -->
-
     <title>Calculator Sederhana</title>
 </head>
 <body>
-    <div id="mainCont" class="container text-center w-25 my-5 pb-3 px-3 rounded">
+    <div class="container bg-black1 w-25 my-5 pb-3 px-3 rounded">
 
         <!-- Display Calculator -->
-        <button class="btn btn-sm btn-info w-5 h-5 my-3" onclick="darkSwitch()">Switch</button>
-        <div id="mainRow" class="row row-cols-1 rounded-top">
-            <div id="topCol" class="col d-block my-5 text-end">
+        <div class="row row-cols-1 mt-5 bg-grey1 rounded-top">
+            <div class="col d-block my-5 bg-grey1 text-end">
                 <h1 class="text-white position-absolute text-end" id="hasil"></h1>
             </div>
         </div>
         <!-- Display Calculator -->
 
-        <div class="mt-2 row row-cols-4 text-white">
+        <div class="mt-2 row row-cols-4 text-white text-center">
             <!-- Start Baris AC, +/-, %, ÷ -->
 
             <div class="col">
                 <input type="button" onclick="bersihkan()" value="AC" class="btn text-info"></input>
             </div>
             <div class="col">
-                <input type="button" onclick="" value="+/-" class="btn text-info"></input>
+                <input type="button" onclick="minus()" value="+/-" class="btn text-info"></input>
             </div>
             <div class="col">
                 <input type="button" onclick="percentage()" value="%" class="btn text-info"></input>
             </div>
             <div class="col">
-                <input type="button" onclick="display('/')" value="÷" class="btn text-danger"></input>
+                <input type="button" onclick="display(':')" value="÷" class="btn text-danger"></input>
             </div>
 
             <!-- End Baris AC, +/-, %, ÷ -->
@@ -123,8 +119,12 @@
             </div>
 
             <!-- End Baris C, 0, ., = -->
+
         </div>
     </div>
+    <footer class="container-fluid text-center mt-5">
+        <p class="text-muted">Made w/ A Ton Of Headche by BoedNoNiwa.#5046 🙃</p>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
     <script type="text/javascript" src="index.js"></script>
 </body>

@@ -1,14 +1,5 @@
 let hasil = document.getElementById("hasil")
 
-function darkSwitch() {
-    let upperBg = document.getElementById("mainRow")
-    let topCol = document.getElementById("topCol")
-    let mainCont = document.getElementById("mainCont")
-    upperBg.classList.toggle("bg-grey1")
-    topCol.classList.toggle("bg-grey1")
-    mainCont.classList.toggle("bg-black1");
-}
-
 function bersihkan() {
     hasil.innerHTML = "";
 }
@@ -19,6 +10,14 @@ function percentage() {
     hasil.innerHTML = q/100
 }
 
+function minus() {
+    let p = hasil.innerHTML
+    let q = p.slice(-p.length)
+    let r = "-" + q
+    hasil.innerHTML = r
+    
+}
+
 function backspace() {
     let p = hasil.innerHTML
     let r = p.substring(0, p.length - 1)
@@ -26,7 +25,7 @@ function backspace() {
 }
 
 function display(value) {
-    let charCheck = hasil.innerText.slice(-1)
+    let charCheck = hasil.innerHTML.slice(-1)
     if(['+', '-', '*', '/', '.'].includes(charCheck) && ['+', '-', '*', '/', '.'].includes(value)) {
         return;
     }else {
@@ -43,7 +42,6 @@ function hitung() {
         hasil.innerHTML = ""
     }else {
         let q = eval(p);
-        let r = "" + q
-        hasil.innerHTML = r
+        hasil.innerHTML = q
     }
 }
