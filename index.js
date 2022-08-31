@@ -5,27 +5,33 @@ function bersihkan() {
 }
 
 function percentage() {
-    let p = hasil.innerHTML;
-    let q = eval(p);
-    hasil.innerHTML = q/100
+    let a = hasil.innerHTML;
+    let b = eval(a);
+    hasil.innerHTML = b/100
 }
 
-function minus() {
-    let p = hasil.innerHTML
-    let q = p.slice(-p.length)
-    let r = "-" + q
-    hasil.innerHTML = r
-    
+function plusMinus() {
+    let a = hasil.innerHTML
+    let b = a.charAt(0)
+    let c = "-" + a
+
+    if(['-'].includes(b) == true) {
+        hasil.innerHTML = a.slice(1)
+        console.log(a.slice(1))
+    }else{
+        hasil.innerHTML = c
+    }
 }
 
 function backspace() {
-    let p = hasil.innerHTML
-    let r = p.substring(0, p.length - 1)
-    hasil.innerHTML = r
+    let a = hasil.innerHTML
+    let b = a.substring(0, a.length - 1)
+    hasil.innerHTML = b
 }
 
 function display(value) {
     let charCheck = hasil.innerHTML.slice(-1)
+
     if(['+', '-', '*', '/', '.'].includes(charCheck) && ['+', '-', '*', '/', '.'].includes(value)) {
         return;
     }else {
@@ -36,12 +42,12 @@ function display(value) {
 }
 
 function hitung() {
-    let p = hasil.innerHTML;
+    let a = hasil.innerHTML;
 
-    if(p == "") {
+    if(a == "") {
         hasil.innerHTML = ""
     }else {
-        let q = eval(p);
-        hasil.innerHTML = q
+        let b = eval(a);
+        hasil.innerHTML = b
     }
 }
