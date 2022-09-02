@@ -20,6 +20,10 @@
             background: rgb(46, 46, 46);
         }
 
+        #darkToggle {
+            transform: scale(1.8);
+        }
+
         .btn {
             width: 3em;
             height: 3em;
@@ -38,17 +42,23 @@
     <title>Calculator Sederhana</title>
 </head>
 <body>
-    <div class="container top-margin bg-black1 w-25 pb-3 px-3 rounded">
+    <div class="container top-margin w-50 pb-3 px-3 rounded" id="cont0">
+        <div class="d-flex">
+            <div class="form-check form-switch mx-auto my-3">
+              <label class="form-check-label" for="lightSwitch"></label>
+              <input class="form-check-input" type="checkbox" id="darkToggle" onclick="darkMode()" />
+            </div>
+          </div>
 
         <!-- Display Calculator -->
-        <div class="row row-cols-1 bg-grey1 rounded-top">
-            <div class="col d-block my-5 bg-grey1 text-end">
-                <h1 class="text-white position-absolute text-end" id="hasil"></h1>
+        <div class="row row-cols-1 rounded-top" id="displayCont">
+            <div class="col d-block my-5 text-end">
+                <h1 class="position-absolute" id="hasil"></h1>
             </div>
         </div>
         <!-- Display Calculator -->
 
-        <div class="mt-2 row row-cols-1 text-white">
+        <div class="mt-2 row row-cols-1">
             <!-- Start Baris AC, +/-, %, ÷ -->
 
             <div class="col d-flex justify-content-evenly">
@@ -63,10 +73,10 @@
             <!-- Start Baris 7, 8, 9, ×  -->
 
             <div class="col d-flex justify-content-evenly">
-                <input type="button" onclick="display('7')" value="7" class="btn text-white"></input>
-                <input type="button" onclick="display('8')" value="8" class="btn text-white"></input>
-                <input type="button" onclick="display('9')" value="9" class="btn text-white"></input>
-                <input type="button" onclick="display('*')" value="×" class="btn text-danger"></input>
+                <input type="button" onclick="display('7')" value="7" class="btn textSwitch"></input>
+                <input type="button" onclick="display('8')" value="8" class="btn textSwitch"></input>
+                <input type="button" onclick="display('9')" value="9" class="btn textSwitch"></input>
+                <button type="button" onclick="display('*')" class="btn text-danger">×</button>
             </div>
 
             <!-- End Baris 7, 8, 9, × -->
@@ -74,10 +84,10 @@
             <!-- Start Baris 4, 5, 6, - -->
 
             <div class="col d-flex justify-content-evenly">
-                <input type="button" onclick="display('4')" value="4" class="btn text-white"></input>
-                <input type="button" onclick="display('5')" value="5" class="btn text-white"></input>
-                <input type="button" onclick="display('6')" value="6" class="btn text-white"></input>
-                <input type="button" onclick="display('-')" value="-" class="btn text-danger"></input>
+                <input type="button" onclick="display('4')" value="4" class="btn textSwitch"></input>
+                <input type="button" onclick="display('5')" value="5" class="btn textSwitch"></input>
+                <input type="button" onclick="display('6')" value="6" class="btn textSwitch"></input>
+                <button type="button" onclick="display('-')" class="btn text-danger">-</button>
             </div>
 
             <!-- End Baris 4, 5, 6, - -->
@@ -85,10 +95,10 @@
             <!-- Start Baris 1, 2, 3, + -->
 
             <div class="col d-flex justify-content-evenly">
-                <input type="button" onclick="display('1')" value="1" class="btn text-white"></input>
-                <input type="button" onclick="display('2')" value="2" class="btn text-white"></input>
-                <input type="button" onclick="display('3')" value="3" class="btn text-white"></input>
-                <input type="button" onclick="display('+')" value="+" class="btn text-danger"></input>
+                <input type="button" onclick="display('1')" value="1" class="btn textSwitch"></input>
+                <input type="button" onclick="display('2')" value="2" class="btn textSwitch"></input>
+                <input type="button" onclick="display('3')" value="3" class="btn textSwitch"></input>
+                <button type="button" onclick="display('+')" class="btn text-danger">+</button>
             </div>
 
             <!-- End Baris 1, 2, 3, + -->
@@ -96,10 +106,10 @@
             <!-- Start Baris C, 0, ., = -->
 
             <div class="col d-flex justify-content-evenly">
-                <input type="button" onclick="backspace()" value="C" class="btn text-white"></input>
-                <input type="button" onclick="display('0')" value="0" class="btn text-white"></input>
-                <input type="button" onclick="display('.')" value="." class="btn text-white"></input>
-                <input type="button" onclick="hitung()" value="=" class="btn text-danger"></input>
+                <input type="button" onclick="backspace()" value="C" class="btn textSwitch"></input>
+                <input type="button" onclick="display('0')" value="0" class="btn textSwitch"></input>
+                <input type="button" onclick="display('.')" value="." class="btn textSwitch"></input>
+                <button type="button" onclick="hitung()" class="btn text-danger">=</button>
             </div>
 
             <!-- End Baris C, 0, ., = -->
