@@ -1,5 +1,18 @@
 let hasil = document.getElementById("hasil")
 
+function darkMode() {
+    let container0 = document.getElementById("cont0")
+    let displayCont = document.getElementById("displayCont")
+    let displayText = document.getElementById("hasil")
+    let textSwitch = document.querySelectorAll(".textSwitch")
+    container0.classList.toggle("bg-black1")
+    displayCont.classList.toggle("bg-grey1")
+    displayText.classList.toggle("text-white")
+    textSwitch.forEach((i) =>{
+        i.classList.toggle("text-white")
+    })
+}
+
 function bersihkan() {
     hasil.innerHTML = "";
 }
@@ -30,16 +43,17 @@ function backspace() {
 }
 
 function display(value) {
+    let a = hasil.innerHTML
     let charCheck = hasil.innerHTML.slice(-1)
 
-    if(['+', '-', '*', '/', '.'].includes(charCheck) && ['+', '-', '*', '/', '.'].includes(value)) {
-        return;
-    }else {
-        hasil.innerHTML += value
-        console.log(hasil.innerHTML )
+    if(!a && ['+', '*', '/', '.'].includes(value)) {
+        return
+        } else if (['+', '-', '*', '/', '.'].includes(charCheck) && ['+', '-', '*', '/', '.'].includes(value)) {
+            return;
+        } else {
+        hasil.innerHTML += value    
+        }
     }
-
-}
 
 function hitung() {
     let a = hasil.innerHTML;
